@@ -4,6 +4,7 @@ import brandRecognition from '../src/assets/images/icon-brand-recognition.svg'
 import detailedRecords from '../src/assets/images/icon-detailed-records.svg'
 import fullyCustomizable from '../src/assets/images/icon-fully-customizable.svg'
 import Feature from './components/Feature';
+import ShortenLink from './components/ShortenLink';
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
             <div className="mx-auto max-w-[1000px]" >
               <div>
               <div className="mx-5 -translate-y-1/2 bg-primaryDarkViolet border-primaryDarkViolet rounded-lg">
-              <div className="bg-[url('../src/assets/images/bg-shorten-desktop.svg')] bg-no-repeat bg-cover bg-center h-32 mx-auto rounded-lg">
+              <div className="bg-[url('../src/assets/images/bg-shorten-desktop.svg')] bg-no-repeat bg-cover bg-center h-36 mx-auto rounded-lg">
+                <ShortenLink/>
               </div>
             </div>
               </div>
