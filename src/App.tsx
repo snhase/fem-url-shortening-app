@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../src/assets/images/logo.svg'
 import brandRecognition from '../src/assets/images/icon-brand-recognition.svg'
 import detailedRecords from '../src/assets/images/icon-detailed-records.svg'
@@ -6,7 +6,23 @@ import fullyCustomizable from '../src/assets/images/icon-fully-customizable.svg'
 import Feature from './components/Feature';
 import ShortenLink from './components/ShortenLink';
 
+export interface urlData {
+  original:string,
+  short:string,
+}
+
 function App() {
+  const [urlList, setUrlList] = useState<urlData[]>(null);
+
+  useEffect(()=>{
+    if(!urlList){
+      let list:urlData[] = localStorage.getItem("urlList")?JSON.parse(localStorage.getItem("urlList")):[];
+      setUrlList(list);
+    } else{
+      localStorage.setItem("urlList", JSON.stringify(urlList));
+    }   
+  },[urlList]);
+
   return (
     <div>
         <header className="max-w-[1000px] mx-auto py-4 flex justify-center content-between items-center">
@@ -35,7 +51,10 @@ function App() {
               <div>
               <div className="mx-5 -translate-y-1/2 bg-primaryDarkViolet border-primaryDarkViolet rounded-lg">
               <div className="bg-[url('../src/assets/images/bg-shorten-desktop.svg')] bg-no-repeat bg-cover bg-center h-36 mx-auto rounded-lg">
-                <ShortenLink/>
+                <ShortenLink
+                  urlList = {urlList}
+                  setUrlList = {setUrlList}
+                />
               </div>
             </div>
               </div>
