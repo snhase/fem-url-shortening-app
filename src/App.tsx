@@ -5,6 +5,7 @@ import detailedRecords from '../src/assets/images/icon-detailed-records.svg'
 import fullyCustomizable from '../src/assets/images/icon-fully-customizable.svg'
 import Feature from './components/Feature';
 import ShortenLink from './components/ShortenLink';
+import UrlListComponent from './components/UrlList';
 
 export interface urlData {
   original:string,
@@ -34,7 +35,7 @@ function App() {
           </div>
         <div className="flex justify-end w-full">
           <div className="px-5 py-2 text-neutralGrayishViolet font-bold hover:text-primaryDarkViolet hover:cursor-pointer">Login</div>
-          <button className="px-6 py-2 bg-primaryCyan border border-primaryCyan rounded-full font-bold text-white hover:opacity-75">Signup</button>
+          <button className="px-6 py-2 bg-primaryCyan border border-primaryCyan rounded-full font-extrabold text-white hover:bg-secondaryCyan hover:border-secondaryCyan">Sign Up</button>
         </div>
         </header>
         <main>
@@ -42,7 +43,7 @@ function App() {
             <div className="ml-28 px-5 w-1/2 flex-none"> 
               <div className="text-7xl text-primaryBlack font-extrabold">More than just shorter links</div> 
               <div className="py-1 text-xl w-5/6 font-medium leading-relaxed text-neutralGrayishViolet"> Build your brand’s recognition and get detailed insights on how your links are performing.</div>
-              <button className="my-3 px-9 py-3 bg-primaryCyan border border-primaryCyan rounded-full font-bold text-white hover:opacity-75">Get Started</button>
+              <button className="my-3 px-9 py-3 bg-primaryCyan border border-primaryCyan rounded-full font-extrabold text-white text-lg hover:bg-secondaryCyan hover:border-secondaryCyan">Get Started</button>
             </div>
             <div className="w-3/6 h-96 bg-[url('../src/assets/images/illustration-working.svg')] bg-no-repeat bg-cover"></div>
           </section>
@@ -57,6 +58,9 @@ function App() {
                 />
               </div>
             </div>
+            <UrlListComponent
+              urlList={urlList}
+            />
               </div>
               <div className="pt-8 pb-24 mx-auto max-w-[1000px] text-center">
                 <div className="py-2 text-4xl text-primaryBlack font-extrabold">Advanced Statistics</div>
@@ -91,7 +95,7 @@ function App() {
               <div className="h-60 flex items-center justify-center">
               <div className='text-center my-5'>
                 <div className="text-5xl  text-white font-extrabold">Boost your links today</div>
-                <button className="w-[200px] mt-10 px-9 py-3 bg-primaryCyan border border-primaryCyan rounded-full font-bold text-white hover:opacity-75">Get Started</button>
+                <button className="w-[200px] mt-10 px-9 py-3 bg-primaryCyan border border-primaryCyan rounded-full font-extrabold text-white hover:bg-secondaryCyan hover:border-secondaryCyan">Get Started</button>
               </div>
               </div>
             </div>
