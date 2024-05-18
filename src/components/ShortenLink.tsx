@@ -20,7 +20,7 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
             setValid(false);
             setError("Please add a link")
         } else {
-            setValid(false);
+            setValid(true);
             setError("")
             sendShortenRequest(value)
         }
@@ -81,11 +81,11 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
 
     return (
         <div>
-            <form 
-                className="h-36 flex items-center justify-center"
+            <form
+                 className="py-6 md:h-36 text-center md:flex md:items-center md:justify-center"
                 onSubmit={shorten}>
                 <input
-                className={`w-[70%] h-12 rounded-md px-5 font-semibold 
+                className={`w-80 md:w-[70%] rounded-md px-5 py-3 font-semibold 
                 placeholder:text-neutralGrayishViolet 
                 focus-visible:outline-none
                 ${!valid?"border-2 border-secondaryRed outline-secondaryRed placeholder:text-secondaryRed placeholder:opacity-50":""}`}
@@ -95,10 +95,11 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
                 onChange={(event) => {
                     setValue(event.target.value)
                 }}
-                /> 
+                />
+                <div> 
                 <button 
-                    className={`ml-5 w-[150px] h-12 bg-primaryCyan border border-primaryCyan rounded-md
-                    ${loading ? "flex items-center justify-center" : ""} 
+                    className={`${!valid && error?"mt-14":"mt-8"} md:mt-0 md:ml-5 w-80 md:w-[150px] py-3 bg-primaryCyan border border-primaryCyan rounded-md
+                    ${loading ? "ml-5 flex items-center justify-center" : ""} 
                     font-extrabold text-white text-center
                     hover:bg-secondaryCyan hover:border-secondaryCyan`}
                     type="submit">
@@ -113,10 +114,11 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
                         :<></>
                     }
                     Shorten It!</button>
+                    </div>
             </form>
             {
                 !valid && error?
-                <span className="-translate-y-10 ml-10 absolute px-5 text-secondaryRed italic">{error}</span>
+                <span className="absolute -translate-y-32 md:-translate-y-10 ml-8 md:ml-10 md:px-5 text-secondaryRed italic">{error}</span>
                 :
                 <></>
             }

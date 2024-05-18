@@ -60,19 +60,20 @@ function App() {
           </div>
         </header>
         <main>
-          <section className="max-w-[1225px] mx-auto py-3 flex items-center justify-between">
-            <div className="ml-28 px-5 w-1/2 flex-none"> 
-              <div className="text-7xl text-primaryBlack font-extrabold">More than just shorter links</div> 
-              <div className="py-1 text-xl w-5/6 font-medium leading-relaxed text-neutralGrayishViolet"> Build your brand’s recognition and get detailed insights on how your links are performing.</div>
+          <section className="mx-5 md:m-0 text-center md:text-left md:max-w-[1225px] md:mx-auto py-3 md:flex md:items-center md:justify-between">
+            <div className="mb-10 md:hidden w-full h-96 bg-[url('../src/assets/images/illustration-working.svg')] bg-no-repeat bg-cover"></div>
+            <div className="md:ml-28 md:px-5 w-fit md:w-1/2 flex-none"> 
+              <div className="text-5xl md:text-7xl text-primaryBlack font-extrabold">More than just shorter links</div> 
+              <div className="py-4 md:py-2 text-xl md:w-5/6 font-medium leading-relaxed text-neutralGrayishViolet"> Build your brand’s recognition and get detailed insights on how your links are performing.</div>
               <button className="my-3 px-9 py-3 bg-primaryCyan border border-primaryCyan rounded-full font-extrabold text-white text-lg hover:bg-secondaryCyan hover:border-secondaryCyan">Get Started</button>
             </div>
-            <div className="w-3/6 h-96 bg-[url('../src/assets/images/illustration-working.svg')] bg-no-repeat bg-cover"></div>
+            <div className="hidden md:inline w-3/6 h-96 bg-[url('../src/assets/images/illustration-working.svg')] bg-no-repeat bg-cover"></div>
           </section>
           <section className='bg-primaryGray mt-28'>
-            <div className="mx-auto max-w-[1000px]" >
+            <div className="mx-auto md:max-w-[1000px]" >
               <div>
               <div className="mx-5 -translate-y-1/2 bg-primaryDarkViolet border-primaryDarkViolet rounded-lg">
-              <div className="bg-[url('../src/assets/images/bg-shorten-desktop.svg')] bg-no-repeat bg-cover bg-center h-36 mx-auto rounded-lg">
+              <div className="md:h-36 md:mx-auto bg-[url('../src/assets/images/bg-shorten-mobile.svg')] md:bg-[url('../src/assets/images/bg-shorten-desktop.svg')] bg-no-repeat bg-right-top md:bg-cover md:bg-center rounded-lg">
                 <ShortenLink
                   urlList = {urlList}
                   setUrlList = {setUrlList}
