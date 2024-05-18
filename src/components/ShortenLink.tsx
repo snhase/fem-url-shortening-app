@@ -20,6 +20,7 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
             setValid(false);
             setError("Please add a link")
         } else {
+            setValid(false);
             setError("")
             sendShortenRequest(value)
         }
@@ -41,13 +42,7 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
             body: urlencoded,
             mode:"cors"
           })
-        .then(response => {
-            if(!response.ok) {
-                throw new Error(response.statusText)
-            } else {
-                return response.json();
-            }
-        })
+        .then(response => response.json())
         .then((responseJson)=>{
             if(responseJson && responseJson.result_url) {
                 let shortLink  = decodeURIComponent(responseJson.result_url);
@@ -64,11 +59,19 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
                 }
                 setUrlList(updatedList);
                 sessionStorage.setItem("urlList", JSON.stringify(updatedList));
+                setLoading(false);
+                setValue("");
             } else {
-                return responseJson.error? setError(responseJson.error) : "Error parsing body"
+                if(responseJson.error) {
+                    let message = responseJson.error.replace(/API Error:/g,"");
+                    setValid(false);
+                    setError(message);
+                } else{
+                    setValid(false);
+                    setError("Server error, please retry or contact support");
+                }
+                setLoading(false);
             }
-            setLoading(false);
-            setValue("");
         }).catch(error => {
             console.log(error);
             setError(error);
@@ -94,11 +97,14 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
                 }}
                 /> 
                 <button 
-                    className="ml-5 px-10 h-12 flex items-center bg-primaryCyan border border-primaryCyan rounded-md font-extrabold text-white hover:bg-secondaryCyan hover:border-secondaryCyan"
+                    className={`ml-5 w-[150px] h-12 bg-primaryCyan border border-primaryCyan rounded-md
+                    ${loading ? "flex items-center justify-center" : ""} 
+                    font-extrabold text-white text-center
+                    hover:bg-secondaryCyan hover:border-secondaryCyan`}
                     type="submit">
                     {
                         loading?
-                        <span>
+                        <span >
                             <svg className="animate-spin h-5 w-5 mr-3 " viewBox="0 0 24 24">
                             <circle className="fill-primaryCyan opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
