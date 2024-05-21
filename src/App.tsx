@@ -84,31 +84,32 @@ function App() {
               urlList={urlList}
             />
               </div>
-              <div className="pt-8 pb-24 mx-auto max-w-[1000px] text-center">
+              <div className="mx-5 pt-8 pb-24 mx-auto md:max-w-[1000px] text-center">
                 <div className="py-2 text-4xl text-primaryBlack font-extrabold">Advanced Statistics</div>
-                <div className="text-lg font-medium leading-relaxed text-neutralGrayishViolet" >Track how your links are performing across the web with <br/> our advanced statistics dashboard.</div>
+                <div className="mx-10 md:max-w-[475px] md:mx-auto text-lg font-medium leading-relaxed text-neutralGrayishViolet" >Track how your links are performing across the web with our advanced statistics dashboard.</div>
               </div>
               <div className="mx-5 pb-48 h-full">
-                <div className="relative z-10 flex justify-between">
+                <div className="relative z-10 md:flex md:justify-between">
                   <Feature
                     img={brandRecognition}
                     title="Brand Recognition"
                     description="Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content."
                     />
                     <Feature
-                      translate="translate-y-20"
+                      translate="my-20 md:my-0 md:translate-y-20"
                       img={detailedRecords}
                       title="Detailed Records"
                       description="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
                       />
                     <Feature
-                      translate="translate-y-32"
+                      translate="md:translate-y-32"
                       img={fullyCustomizable}
                       title="Fully Customizable"
                       description="Improve brand awareness and content discoverability through customizable links, supercharging audience engagement."
                       />
                 </div>
-                <hr className="mx-5 z-0 -translate-y-20 bg-primaryCyan p-1"></hr>
+                <hr className="absolute left-[49%] md:hidden z-0 -translate-y-full bg-primaryCyan w-2 h-[750px]"></hr>
+                <hr className="hidden md:block mx-5 z-0 -translate-y-20 bg-primaryCyan p-1"></hr>
               </div>
             </div>
           </section>
