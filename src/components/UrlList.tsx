@@ -23,8 +23,8 @@ const UrlListComponent = ({urlList}:Props) => {
                                 <div className="py-3 md:py-0 text-primaryCyan font-medium text-lg">{item.short}</div>
                                 <button
                                     className={`md:ml-5 w-full md:w-[100px] p-2 h-10 bg-primaryCyan border border-primaryCyan 
-                                    rounded-md font-extrabold text-white hover:bg-secondaryCyan hover:border-secondaryCyan
-                                    ${ copy === idx ? "bg-primaryDarkViolet border-primaryDarkViolet hover:bg-primaryDarkViolet hover:border-primaryDarkViolet" : "" }`}
+                                    rounded-md font-extrabold text-white
+                                    ${ copy === idx ? "bg-primaryDarkViolet border-primaryDarkViolet hover:bg-primaryDarkViolet hover:border-primaryDarkViolet" : "hover:bg-secondaryCyan hover:border-secondaryCyan" }`}
                                     onClick={() => {
                                         navigator.clipboard.writeText(item.short);
                                         setCopy(idx)

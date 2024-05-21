@@ -85,7 +85,7 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
                  className="py-6 md:h-36 text-center md:flex md:items-center md:justify-center"
                 onSubmit={shorten}>
                 <input
-                className={`w-80 md:w-[70%] rounded-md px-5 py-3 font-semibold 
+                className={`w-[85%] md:w-[70%] rounded-md px-5 py-3 font-semibold 
                 placeholder:text-neutralGrayishViolet 
                 focus-visible:outline-none
                 ${!valid?"border-2 border-secondaryRed outline-secondaryRed placeholder:text-secondaryRed placeholder:opacity-50":""}`}
@@ -98,7 +98,7 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
                 />
                 <div> 
                 <button 
-                    className={`${!valid && error?"mt-14":"mt-8"} md:mt-0 md:ml-5 w-80 md:w-[150px] py-3 bg-primaryCyan border border-primaryCyan rounded-md
+                    className={`${!valid && error?"mt-14":"mt-8"} md:mt-0 md:ml-5 w-[85%] md:w-[150px] py-3 bg-primaryCyan border border-primaryCyan rounded-md
                     ${loading ? "ml-5 flex items-center justify-center" : ""} 
                     font-extrabold text-white text-center
                     hover:bg-secondaryCyan hover:border-secondaryCyan`}
