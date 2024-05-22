@@ -3,10 +3,11 @@ import { urlData } from 'src/App'
 
 interface Props {
     urlList:urlData[],
-    setUrlList?:(value:urlData[])=>void
+    setUrlList?:(value:urlData[])=>void,
+    setCopy:(value:number|null)=>void
 }
 
-const ShortenLink = ({urlList, setUrlList}:Props) => {
+const ShortenLink = ({urlList, setUrlList, setCopy}:Props) => {
     const [value, setValue] = useState("");
     const [valid, setValid] = useState(true);
     const [error, setError] = useState("");
@@ -15,7 +16,7 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
 
     const shorten = (event : FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(value);
+        setCopy(null);
         if(value === "") {
             setValid(false);
             setError("Please add a link")
@@ -93,7 +94,8 @@ const ShortenLink = ({urlList, setUrlList}:Props) => {
                 placeholder="Shorten a link here..."
                 value={value}
                 onChange={(event) => {
-                    setValue(event.target.value)
+                    setValue(event.target.value);
+                    setCopy(null)
                 }}
                 />
                 <div> 

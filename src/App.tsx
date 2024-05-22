@@ -17,6 +17,7 @@ export interface urlData {
 function App() {
 
   const [urlList, setUrlList] = useState<urlData[]>(null);
+  const [copy, setCopy] = useState(null);
 
   useEffect(()=>{
     if(!urlList){
@@ -40,11 +41,14 @@ function App() {
                 <ShortenLink
                   urlList = {urlList}
                   setUrlList = {setUrlList}
+                  setCopy={setCopy}
                 />
               </div>
             </div>
             <UrlListComponent
               urlList={urlList}
+              copy={copy}
+              setCopy={setCopy}
             />
               </div>
               <div className="mx-5 pt-8 pb-24 mx-auto md:max-w-[1000px] text-center">

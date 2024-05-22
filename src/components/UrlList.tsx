@@ -2,12 +2,13 @@ import React, { useState } from "react"
 import { urlData } from "src/App";
 
 interface Props {
-    urlList: urlData[]
+    urlList: urlData[],
+    copy:number,
+    setCopy:(value:number)=>void
 }
 
-const UrlListComponent = ({urlList}:Props) => {
+const UrlListComponent = ({urlList, copy, setCopy}:Props) => {
     
-    const [copy, setCopy] = useState(null);
 
     return(
         <div className="mx-auto max-w-[1000px] -translate-y-16">
