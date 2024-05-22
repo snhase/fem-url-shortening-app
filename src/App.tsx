@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../src/assets/images/logo.svg'
 import brandRecognition from '../src/assets/images/icon-brand-recognition.svg'
 import detailedRecords from '../src/assets/images/icon-detailed-records.svg'
 import fullyCustomizable from '../src/assets/images/icon-fully-customizable.svg'
 import Feature from './components/Feature';
 import ShortenLink from './components/ShortenLink';
 import UrlListComponent from './components/UrlList';
+import Header from './components/Header';
 
 export interface urlData {
   original:string,
@@ -15,7 +15,6 @@ export interface urlData {
 function App() {
 
   const [urlList, setUrlList] = useState<urlData[]>(null);
-  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(()=>{
     if(!urlList){
@@ -28,37 +27,7 @@ function App() {
 
   return (
     <div>
-        <header className="mx-5 md:m-0">
-        <div className="w-full md:max-w-[1000px] mx-auto py-4 flex justify-center justify-between items-center">
-        <div className="py-5 flex md:w-full items-center">
-          <img className="px-5" src={logo} alt="Shortly logo"></img>
-          <div className="hidden md:inline px-5 text-neutralGrayishViolet font-extrabold hover:text-primaryDarkViolet hover:cursor-pointer">Features</div>
-          <div className="hidden md:inline px-5 text-neutralGrayishViolet font-extrabold hover:text-primaryDarkViolet hover:cursor-pointer">Pricing</div>
-          <div className="hidden md:inline px-5 text-neutralGrayishViolet font-extrabold hover:text-primaryDarkViolet hover:cursor-pointer">Resources</div>
-          </div>
-        <div className="flex justify-end md:w-full">
-          <div className="hidden md:inline px-5 py-2 text-neutralGrayishViolet font-bold hover:text-primaryDarkViolet hover:cursor-pointer">Login</div>
-          <button className="hidden md:inline px-6 py-2 bg-primaryCyan border border-primaryCyan rounded-full font-extrabold text-white hover:bg-secondaryCyan hover:border-secondaryCyan">Sign Up</button>
-          <div 
-            className="md:hidden stroke-neutralGrayishViolet"
-            onClick={() => { setShowMenu(!showMenu)}}
-            >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" className="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-            </svg>
-          </div>
-        </div>
-        </div>
-        <div className={`${showMenu?"block":"hidden"} md:hidden
-              py-10 bg-primaryDarkViolet text-center rounded-lg`}>
-            <div className="pb-5 text-white font-extrabold hover:cursor-pointer">Features</div>
-            <div className="pb-5 text-white font-extrabold hover:cursor-pointer">Pricing</div>
-            <div className="pb-5 text-white font-extrabold hover:cursor-pointer">Resources</div>
-            <hr className="mx-auto w-3/4 mb-5 border-[#4B3F6B]"/>
-            <div className="pb-5 text-white font-bold hover:cursor-pointer">Login</div>
-            <button className="p-6 py-2 w-3/4 bg-primaryCyan border border-primaryCyan rounded-full font-extrabold text-white hover:bg-secondaryCyan hover:border-secondaryCyan">Sign Up</button>
-          </div>
-        </header>
+        <Header/>
         <main>
           <section className="md:m-0 text-center md:text-left md:max-w-[1225px] md:mx-auto py-3 md:flex md:items-center md:justify-between">
             <div className="ml-5 mr-0 mb-10 md:hidden w-full h-96 bg-[url('../src/assets/images/illustration-working.svg')] bg-no-repeat bg-cover"></div>
