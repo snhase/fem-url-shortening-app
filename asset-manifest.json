@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fem-url-shortening-app/static/css/main.48494ce7.css",
-    "main.js": "/fem-url-shortening-app/static/js/main.9ee7f578.js",
+    "main.js": "/fem-url-shortening-app/static/js/main.b7625d1c.js",
     "static/media/illustration-working.svg": "/fem-url-shortening-app/static/media/illustration-working.c9b5ef5452363d8be3df.svg",
     "static/media/logo.svg": "/fem-url-shortening-app/static/media/logo.834643034343520f3b4d7e43111ed4d8.svg",
     "static/media/icon-fully-customizable.svg": "/fem-url-shortening-app/static/media/icon-fully-customizable.a1532a74fa781f6fde327313bd5ffce3.svg",
@@ -13,10 +13,10 @@
     "index.html": "/fem-url-shortening-app/index.html",
     "static/media/bg-shorten-mobile.svg": "/fem-url-shortening-app/static/media/bg-shorten-mobile.41c34b33a14a3077e506.svg",
     "main.48494ce7.css.map": "/fem-url-shortening-app/static/css/main.48494ce7.css.map",
-    "main.9ee7f578.js.map": "/fem-url-shortening-app/static/js/main.9ee7f578.js.map"
+    "main.b7625d1c.js.map": "/fem-url-shortening-app/static/js/main.b7625d1c.js.map"
   },
   "entrypoints": [
     "static/css/main.48494ce7.css",
-    "static/js/main.9ee7f578.js"
+    "static/js/main.b7625d1c.js"
   ]
 }
