@@ -20,7 +20,7 @@ function Header() {
           <div className="hidden md:inline px-5 py-2 text-neutralGrayishViolet font-bold hover:text-primaryDarkViolet hover:cursor-pointer">Login</div>
           <button className="hidden md:inline px-6 py-2 bg-primaryCyan border border-primaryCyan rounded-full font-extrabold text-white hover:bg-secondaryCyan hover:border-secondaryCyan">Sign Up</button>
           <div 
-            className="md:hidden stroke-neutralGrayishViolet"
+            className="md:hidden stroke-neutralGrayishViolet hover:cursor-pointer"
             onClick={() => { setShowMenu(!showMenu)}}
             >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" className="w-6 h-6">
